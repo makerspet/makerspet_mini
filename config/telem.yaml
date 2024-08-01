@@ -1,0 +1,5 @@
+kaiaai_telemetry_node:
+  ros__parameters:
+
+    laser_scan:
+      mask_radius_meters: 0.1
