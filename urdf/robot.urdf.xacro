@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="makerspet_loki" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="makerspet_mini" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- https://classic.gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros -->
   <!-- https://classic.gazebosim.org/tutorials?tut=ros_urdf&cat=connect_ros -->
   <!-- https://github.com/ROBOTIS-GIT/turtlebot3_simulations/blob/humble-devel/turtlebot3_gazebo/models/turtlebot3_waffle_pi/model.sdf -->
@@ -7,14 +7,14 @@
 
   <!-- ****************** ROBOT DIMENSIONS ****************** -->
   <!-- Units: meters, degrees, kg, N*m, m/s2 -->
-  <xacro:property name="wheel_diameter" value="0.067"/>
-  <xacro:property name="wheel_width" value="0.029"/>
-  <xacro:property name="caster_diameter" value="0.04"/>
+  <xacro:property name="wheel_diameter" value="0.043"/>
+  <xacro:property name="wheel_width" value="0.005"/>
+  <xacro:property name="caster_diameter" value="0.017"/>
   <!-- Caster center to base edge -->
   <xacro:property name="caster_inset" value="0.0386"/>
-  <xacro:property name="floor_clearance" value="0.018"/>
-  <xacro:property name="base_diameter" value="0.2042"/>
-  <xacro:property name="wheel_base" value="0.159063"/>
+  <xacro:property name="floor_clearance" value="0.0149"/>
+  <xacro:property name="base_diameter" value="0.124"/>
+  <xacro:property name="wheel_base" value="0.104243"/>
   <xacro:property name="lower_cylinder_height" value="0.1227"/>
   <xacro:property name="lower_to_upper_cylinders_gap" value="0.0195"/>
   <xacro:property name="laser_puck_to_upper_cylinder_gap" value="0.0022"/>
@@ -37,8 +37,9 @@
   <xacro:property name="imu_joint_dz" value="0"/>
   <!-- imu_joint_rpy: [0.0, 0.0, 0.0] -->
 
-  <xacro:property name="motor_stall_torque" value="0.49"/>
-  <xacro:property name="max_wheel_acceleration" value="5"/>
+  <!-- N*m -->
+  <xacro:property name="motor_stall_torque" value="0.171616375"/>
+  <xacro:property name="max_wheel_acceleration" value="1"/>
   <xacro:property name="lower_cylinder_mass" value="0.500"/>
   <!-- caster and battery weight -->
   <xacro:property name="caster_mass" value="0.420"/>
@@ -337,7 +338,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://makerspet_loki/mesh/head.stl" scale="${0.001*base_diameter} ${0.001*base_diameter} ${0.001*head_height*2}"/>
+        <mesh filename="package://makerspet_mini/mesh/head.stl" scale="${0.001*base_diameter} ${0.001*base_diameter} ${0.001*head_height*2}"/>
       </geometry>
       <material name="red"/>
     </visual>
