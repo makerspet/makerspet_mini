@@ -2,4 +2,9 @@ kaiaai_telemetry_node:
   ros__parameters:
 
     laser_scan:
-      mask_radius_meters: 0.1
+      mask_radius_meters: 0.12
+      orientation_deg: 180.0
+
+    battery:
+      voltage_full: 9.0
+      voltage_empty: 6.8
