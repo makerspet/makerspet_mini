@@ -187,7 +187,7 @@
       <geometry>
         <sphere radius="${caster_diameter/2}"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="white"/>
     </visual>
 
    <collision>
@@ -214,7 +214,7 @@
       <geometry>
         <cylinder length="${wheel_width}" radius="${wheel_diameter/2}"/>
       </geometry>
-      <material name="blue"/>
+      <material name="red"/>
     </visual>
 
     <collision>
@@ -240,7 +240,7 @@
       <geometry>
         <cylinder length="${wheel_width}" radius="${wheel_diameter/2}"/>
       </geometry>
-      <material name="blue"/>
+      <material name="red"/>
     </visual>
 
     <collision>
@@ -256,7 +256,7 @@
 
   <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="base_scan"/>
+    <child link="base_scan_link"/>
     <origin xyz="0 0 ${lower_cylinder_height + laser_puck_offset}" rpy="-${pi} 0 0"/>
   </joint>
 
@@ -266,7 +266,7 @@
       <geometry>
         <cylinder length="${laser_puck_height}" radius="${laser_puck_diameter/2}"/>
       </geometry>
-      <material name="blue"/>
+      <material name="black"/>
     </visual>
 
     <collision>
@@ -358,7 +358,7 @@
       <!-- pose>0 0 0 0 0 0</pose -->
       <visualize>false</visualize>
       <always_on>true</always_on>
-      <update_rate>9</update_rate>
+      <update_rate>5</update_rate>
       <ray>
         <scan>
           <horizontal>
@@ -370,7 +370,7 @@
         </scan>
         <range>
           <min>0.1</min>
-          <max>12.0</max>
+          <max>10.0</max>
           <resolution>0.02</resolution>
         </range>
         <noise>
@@ -399,7 +399,7 @@
     <mu2>0.2</mu2>
     <!-- mu>100000.0</mu -->
     <!-- mu2>100000.0</mu2 -->
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Red</material>
     <!-- fdir1>0 0 0</fdir1 -->
     <!-- kp>1e+5</kp -->
     <!-- kd>1</kd -->
@@ -416,13 +416,13 @@
   <gazebo reference="wheel_right_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Red</material>
   </gazebo>
 
   <gazebo reference="caster_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <material>Gazebo/Yellow</material>
+    <material>Gazebo/White</material>
   </gazebo>
 
   <gazebo reference="head_link">
@@ -433,7 +433,7 @@
     <material>Gazebo/White</material>
   </gazebo>
 
-  <gazebo reference="base_upper_link">
-    <material>Gazebo/White</material>
+  <gazebo reference="base_scan">
+    <material>Gazebo/Black</material>
   </gazebo>
 </robot>
