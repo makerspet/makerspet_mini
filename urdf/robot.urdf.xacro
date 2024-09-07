@@ -21,21 +21,6 @@
   <xacro:property name="laser_puck_diameter" value="0.0656"/>
   <xacro:property name="upper_cylinder_height" value="0.003"/>
   <xacro:property name="head_height" value="0.09"/>
-  <xacro:property name="tablet_width" value="0.1669"/>
-  <xacro:property name="tablet_height" value="0.0781"/>
-  <xacro:property name="tablet_thickness" value="0.009"/>
-  <!-- Zero - tablet faces straight forward -->
-  <xacro:property name="tablet_pitch_angle" value="20"/>
-  <!-- Upper cylinder's front to tablet bottom's center -->
-  <xacro:property name="tablet_inset" value="0.07"/>
-  <xacro:property name="color_camera_diameter" value="0.004"/>
-  <!-- Tablet edge to camera center -->
-  <xacro:property name="color_camera_inset" value="0.008"/>
-  <!-- Delta xyz from tablet center -->
-  <xacro:property name="imu_joint_dx" value="0"/>
-  <xacro:property name="imu_joint_dy" value="0"/>
-  <xacro:property name="imu_joint_dz" value="0"/>
-  <!-- imu_joint_rpy: [0.0, 0.0, 0.0] -->
 
   <!-- N*m -->
   <xacro:property name="motor_stall_torque" value="0.171616375"/>
@@ -47,14 +32,9 @@
   <xacro:property name="laser_puck_mass" value="0.200"/>
   <xacro:property name="upper_cylinder_mass" value="0.100"/>
   <xacro:property name="head_mass" value="0.200"/>
-  <xacro:property name="tablet_mass" value="0.200"/>
   <!-- ****************** **************** ****************** -->
 
   <xacro:property name="DEG2RAD" value="0.0174533"/>
-  <xacro:property name="color_camera_thickness" value="0.0001"/>
-  <xacro:property name="imu_xlen" value="0.001"/>
-  <xacro:property name="imu_ylen" value="0.002"/>
-  <xacro:property name="imu_zlen" value="0.004"/>
 
   <material name="black">
       <color rgba="0 0 0 1.0"/>
@@ -352,102 +332,6 @@
 
     <xacro:solid_semi_ellipsoid_inertia m="${head_mass}" x="${base_diameter/2}" y="${base_diameter/2}" z="${head_height}"/>
   </link>
-
-
-  <joint name="tablet_joint" type="fixed">
-    <parent link="head_link"/>
-    <child link="tablet_link"/>
-    <origin xyz="${base_diameter/2 - tablet_inset} 0 0" rpy="0 ${-tablet_pitch_angle*DEG2RAD} 0"/>
-  </joint>
-
-  <link name="tablet_link">
-    <visual>
-      <origin xyz="0 0 ${tablet_height/2}" rpy="${pi/2} 0 ${pi/2}"/>
-      <geometry>
-        <box size="${tablet_width} ${tablet_height} ${tablet_thickness}"/>
-      </geometry>
-      <material name="light_black"/>
-    </visual>
-
-   <collision>
-      <origin xyz="0 0 ${tablet_height/2}" rpy="${pi/2} 0 ${pi/2}"/>
-      <origin xyz="0 0 0.03905" rpy="${pi/2} 0 ${pi/2}"/>
-      <geometry>
-        <box size="${tablet_width} ${tablet_height} ${tablet_thickness}"/>
-      </geometry>
-    </collision>
-
-    <xacro:solid_box_inertia m="${tablet_mass}" x="${tablet_width}" y="${tablet_height}" z="${tablet_thickness}"/>
-  </link>
-
-  <joint name="color_camera_joint" type="fixed">
-    <parent link="tablet_link"/>
-    <child link="color_camera_link"/>
-    <origin xyz="${tablet_thickness/2-color_camera_thickness} ${color_camera_inset - tablet_width/2} ${tablet_height/2}" rpy="0 0 0"/>
-  </joint>
-
-  <link name="color_camera_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 ${pi/2} 0"/>
-      <geometry>
-        <cylinder length="${color_camera_thickness}" radius="${color_camera_diameter/2}"/>
-      </geometry>
-      <material name="white"/>
-    </visual>
-  </link>
-
-
-  <joint name="imu_joint" type="fixed">
-    <parent link="tablet_link"/>
-    <child link="imu_link"/>
-    <origin xyz="${imu_joint_dx} ${imu_joint_dy} ${imu_joint_dz+tablet_height/2}" rpy="0 0 0"/>
-  </joint>
-
-  <link name="imu_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="${imu_xlen} ${imu_ylen} ${imu_zlen}"/>
-      </geometry>
-      <material name="black"/>
-    </visual>
-  </link>
-
-  <gazebo reference="color_camera_link">
-    <sensor type="camera" name="color_camera">
-      <always_on>true</always_on>
-      <visualize>false</visualize>
-      <update_rate>15.0</update_rate>
-      <camera name="front_color_camera">
-        <horizontal_fov>1.3962634</horizontal_fov>
-        <image>
-          <width>720</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>300</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-      </camera>
-      <plugin name="color_camera_plugin" filename="libgazebo_ros_camera.so">
-        <!-- ros -->
-          <!-- remapping -->
-          <!-- namespace -->
-        <!-- /ros -->
-
-        <!-- camera_name>omit, defaults to sensor name</camera_name -->
-        <!-- frame_name>omit, defaults to link name</frameName -->
-
-        <!-- hack_baseline>0.07</hack_baseline -->
-      </plugin>
-    </sensor>
-  </gazebo>
 
 
   <gazebo>
