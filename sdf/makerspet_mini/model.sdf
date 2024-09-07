@@ -143,7 +143,7 @@
         <geometry>
           <mesh>
             <scale>0.000204 0.000204 0.00018</scale>
-            <uri>model://makerspet_mini/mesh/head.stl</uri>
+            <uri>model://makerspet_mini/mesh/hemisphere.stl</uri>
           </mesh>
         </geometry>
         <material>
