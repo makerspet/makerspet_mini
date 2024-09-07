@@ -1,6 +1,6 @@
 # Maker's Pet Mini ROS2 educational robot
 
-A 120mm DIY 3D-printable pet robot compatible with [Kaia.ai](https://kaia.ai) software [platform](https://github.com/kaiaai/). 3D print, build, run and mod your own home pet robot! Please learn more at [Maker's Pet](https://makerspet.com), [REMAKE.AI](https://remake.ai) and join our [FB group](https://www.facebook.com/groups/243730868651472/).
+A 124mm DIY 3D-printable pet robot compatible with [Kaia.ai](https://kaia.ai) software [platform](https://github.com/kaiaai/). 3D print, build, run and mod your own home pet robot! Please learn more at [Maker's Pet](https://makerspet.com), [REMAKE.AI](https://remake.ai) and join our [FB group](https://www.facebook.com/groups/243730868651472/).
 
 Please install these Arduino libraries (using Arduino Library Manager) before building this firmware:
 - [micro_ros_kaia](https://github.com/kaiaai/micro_ros_arduino_kaiaai)
@@ -58,4 +58,4 @@ Supported laser distance scan sensors:
 - ROS2 software mod [instructions](https://github.com/makerspet/makerspet_loki/tree/main/urdf)
 
 ## Open-source design
-Authored in Fusion 360. Printed using a Prusa MK3.5S.
+Authored in Fusion 360. Printed using a Prusa MK3S+.
