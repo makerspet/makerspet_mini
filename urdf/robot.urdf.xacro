@@ -8,13 +8,13 @@
   <!-- ****************** ROBOT DIMENSIONS ****************** -->
   <!-- Units: meters, degrees, kg, N*m, m/s2 -->
   <xacro:property name="wheel_diameter" value="0.043"/>
-  <xacro:property name="wheel_width" value="0.005"/>
+  <xacro:property name="wheel_width" value="0.0055"/>
   <xacro:property name="caster_diameter" value="0.017"/>
   <!-- Caster center to base edge -->
   <xacro:property name="caster_inset" value="0.0386"/>
   <xacro:property name="floor_clearance" value="0.0149"/>
   <xacro:property name="base_diameter" value="0.124"/>
-  <xacro:property name="wheel_base" value="0.104243"/>
+  <xacro:property name="wheel_base" value="0.105043"/>
   <xacro:property name="lower_cylinder_height" value="0.1227"/>
   <xacro:property name="lower_to_upper_cylinders_gap" value="0.0195"/>
   <xacro:property name="laser_puck_to_upper_cylinder_gap" value="0.0022"/>
