@@ -11,26 +11,24 @@
   <xacro:property name="wheel_width" value="0.0055"/>
   <xacro:property name="caster_diameter" value="0.017"/>
   <!-- Caster center to base edge -->
-  <xacro:property name="caster_inset" value="0.0386"/>
+  <xacro:property name="caster_inset" value="0.011"/>
   <xacro:property name="floor_clearance" value="0.0149"/>
   <xacro:property name="base_diameter" value="0.124"/>
   <xacro:property name="wheel_base" value="0.105043"/>
-  <xacro:property name="lower_cylinder_height" value="0.1227"/>
-  <xacro:property name="lower_to_upper_cylinders_gap" value="0.0195"/>
-  <xacro:property name="laser_puck_to_upper_cylinder_gap" value="0.0022"/>
-  <xacro:property name="laser_puck_diameter" value="0.0656"/>
-  <xacro:property name="upper_cylinder_height" value="0.003"/>
+  <xacro:property name="lower_cylinder_height" value="0.032"/>
+  <xacro:property name="laser_puck_height" value="0.016"/>
+  <xacro:property name="laser_puck_diameter" value="0.06"/>
+  <xacro:property name="laser_puck_offset" value="0.0384"/>
   <xacro:property name="head_height" value="0.09"/>
 
   <!-- N*m -->
   <xacro:property name="motor_stall_torque" value="0.171616375"/>
   <xacro:property name="max_wheel_acceleration" value="1"/>
-  <xacro:property name="lower_cylinder_mass" value="0.500"/>
+  <xacro:property name="lower_cylinder_mass" value="0.250"/>
   <!-- caster and battery weight -->
-  <xacro:property name="caster_mass" value="0.420"/>
+  <xacro:property name="caster_mass" value="0.050"/>
   <xacro:property name="wheel_mass" value="0.050"/>
   <xacro:property name="laser_puck_mass" value="0.200"/>
-  <xacro:property name="upper_cylinder_mass" value="0.100"/>
   <xacro:property name="head_mass" value="0.200"/>
   <!-- ****************** **************** ****************** -->
 
@@ -259,14 +257,14 @@
   <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
-    <origin xyz="0 0 ${lower_cylinder_height + (lower_to_upper_cylinders_gap - laser_puck_to_upper_cylinder_gap)/2}" rpy="-${pi} 0 0"/>
+    <origin xyz="0 0 ${lower_cylinder_height + laser_puck_offset}" rpy="-${pi} 0 0"/>
   </joint>
 
   <link name="base_scan">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder length="${lower_to_upper_cylinders_gap - laser_puck_to_upper_cylinder_gap}" radius="${laser_puck_diameter/2}"/>
+        <cylinder length="${laser_puck_height}" radius="${laser_puck_diameter/2}"/>
       </geometry>
       <material name="blue"/>
     </visual>
@@ -274,44 +272,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder length="${lower_to_upper_cylinders_gap - laser_puck_to_upper_cylinder_gap}" radius="${laser_puck_diameter/2}"/>
+        <cylinder length="${laser_puck_height}" radius="${laser_puck_diameter/2}"/>
       </geometry>
     </collision>
 
-    <xacro:solid_cylinder_inertia m="${laser_puck_mass}" r="${laser_puck_diameter/2}" h="${lower_to_upper_cylinders_gap - laser_puck_to_upper_cylinder_gap}"/>
-  </link>
-
-
-  <joint name="base_upper_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="base_upper_link"/>
-    <origin xyz="0 0 ${lower_cylinder_height + lower_to_upper_cylinders_gap}" rpy="0 0 0"/>
-  </joint>
-
-  <link name="base_upper_link">
-    <visual>
-      <origin xyz="0 0 ${upper_cylinder_height/2}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder length="${upper_cylinder_height}" radius="${base_diameter/2}"/>
-      </geometry>
-      <material name="white"/>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 ${upper_cylinder_height/2}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder length="${upper_cylinder_height}" radius="${base_diameter/2}"/>
-      </geometry>
-    </collision>
-
-    <xacro:solid_cylinder_inertia m="${upper_cylinder_mass}" r="${base_diameter/2}" h="${upper_cylinder_height}"/>
+    <xacro:solid_cylinder_inertia m="${laser_puck_mass}" r="${laser_puck_diameter/2}" h="${laser_puck_height}"/>
   </link>
 
 
   <joint name="head_joint" type="fixed">
-    <parent link="base_upper_link"/>
+    <parent link="base_link"/>
     <child link="head_link"/>
-    <origin xyz="0 0 ${upper_cylinder_height}" rpy="0 0 0"/>
+    <origin xyz="0 0 ${lower_cylinder_height}" rpy="0 0 0"/>
   </joint>
 
   <link name="head_link">
@@ -421,66 +393,6 @@
     </sensor>
   </gazebo>
 
-
-  <gazebo reference="imu_link">
-    <gravity>true</gravity>
-    <sensor name="imu_sensor" type="imu">
-      <always_on>true</always_on>
-      <update_rate>100</update_rate>
-      <!-- visualize>true</visualize -->
-
-      <imu>
-        <angular_velocity>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </z>
-        </angular_velocity>
-        <linear_acceleration>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </z>
-        </linear_acceleration>
-      </imu>
-
-      <!-- https://github.com/ros-simulation/gazebo_ros_pkgs/blob/foxy/gazebo_plugins/src/gazebo_ros_imu_sensor.cpp -->
-      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <ros>
-          <!-- namespace>/robot_instance_1</namespace -->
-          <remapping>~/out:=imu</remapping>
-        </ros>
-      </plugin>
-    </sensor>
-  </gazebo>
 
   <gazebo reference="wheel_left_link">
     <mu1>0.2</mu1>
