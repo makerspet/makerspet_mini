@@ -1,4 +1,4 @@
--- Copyright 2023 REMAKE.AI
+-- Copyright 2024 REMAKE.AI
 -- Copyright 2016 The Cartographer Authors
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,22 +48,32 @@ options = {
 
 MAP_BUILDER.use_trajectory_builder_2d = true
 
+-- https://google-cartographer-ros.readthedocs.io/en/latest/algo_walkthrough.html
+-- https://github.com/cartographer-project/cartographer/tree/master/configuration_files
 -- https://google-cartographer-ros.readthedocs.io/en/latest/tuning.html
--- TRAJECTORY_BUILDER_2D.min_range = 0.12
 TRAJECTORY_BUILDER_2D.min_range = 0.15
---TRAJECTORY_BUILDER_2D.max_range = 3.5
-TRAJECTORY_BUILDER_2D.max_range = 7
+TRAJECTORY_BUILDER_2D.max_range = 3.5
 TRAJECTORY_BUILDER_2D.missing_data_ray_length = 3.
 TRAJECTORY_BUILDER_2D.use_imu_data = false
-TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true 
-TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.1)
---TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 10.
---TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 0.01
 
---POSE_GRAPH.constraint_builder.min_score = 0.65
---POSE_GRAPH.constraint_builder.global_localization_min_score = 0.7
---POSE_GRAPH.matcher_translation_weight = 1e5
---POSE_GRAPH.matcher_rotation_weight = 0.01
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 0.1
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.angular_search_window = math.rad(20.)
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = 1e-3
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = 1e-1
+
+-- TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = false
+-- TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 10.
+-- TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 0.01
+-- TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(1.0)
+
+-- POSE_GRAPH.constraint_builder.min_score = 0.65
+-- POSE_GRAPH.constraint_builder.global_localization_min_score = 0.7
+-- POSE_GRAPH.matcher_translation_weight = 1e5
+-- POSE_GRAPH.matcher_rotation_weight = 0.01
+-- POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window = math.rad(15.)
+-- POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 3.0
+-- POSE_GRAPH.optimization_problem.huber_scale = 1e2
 
 -- POSE_GRAPH.optimize_every_n_nodes = 0
 
