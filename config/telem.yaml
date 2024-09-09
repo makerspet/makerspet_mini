@@ -3,7 +3,6 @@ kaiaai_telemetry_node:
 
     laser_scan:
       mask_radius_meters: 0.12
-      orientation_deg: 180.0
 
     battery:
       voltage_full: 9.0
