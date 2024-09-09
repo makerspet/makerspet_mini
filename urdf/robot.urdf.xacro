@@ -257,7 +257,7 @@
   <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
-    <origin xyz="0 0 ${lower_cylinder_height + laser_puck_offset}" rpy="-${pi} 0 0"/>
+    <origin xyz="0 0 ${lower_cylinder_height + laser_puck_offset}" rpy="0 0 -${pi}"/>
   </joint>
 
   <link name="base_scan">
