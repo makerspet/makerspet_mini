@@ -20,6 +20,7 @@
   <xacro:property name="laser_puck_diameter" value="0.06"/>
   <xacro:property name="laser_puck_offset" value="0.0384"/>
   <xacro:property name="head_height" value="0.0388"/>
+  <xacro:property name="lidar_center_offset" value="0"/>
 
   <!-- N*m -->
   <xacro:property name="motor_stall_torque" value="0.171616375"/>
@@ -178,7 +179,7 @@
   <joint name="caster_joint" type="fixed">
     <parent link="base_link"/>
     <child link="caster_link"/>
-    <origin xyz="${base_diameter/2-caster_inset} 0 ${caster_diameter/2-floor_clearance}" rpy="0 0 0"/>
+    <origin xyz="${caster_inset-base_diameter/2} 0 ${caster_diameter/2-floor_clearance}" rpy="0 0 0"/>
   </joint>
 
   <link name="caster_link">
@@ -257,7 +258,7 @@
   <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
-    <origin xyz="0 0 ${lower_cylinder_height + laser_puck_offset}" rpy="0 -${pi} 0"/>
+    <origin xyz="${lidar_center_offset} 0 ${lower_cylinder_height + laser_puck_offset}" rpy="0 -${pi} 0"/>
   </joint>
 
   <link name="base_scan">
