@@ -20,7 +20,7 @@
   <xacro:property name="laser_puck_diameter" value="0.06"/>
   <xacro:property name="laser_puck_offset" value="0.0384"/>
   <xacro:property name="head_height" value="0.0388"/>
-  <xacro:property name="lidar_center_offset" value="0"/>
+  <xacro:property name="lidar_center_offset" value="0.000"/>
 
   <!-- N*m -->
   <xacro:property name="motor_stall_torque" value="0.171616375"/>
