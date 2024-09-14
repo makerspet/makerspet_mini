@@ -14,7 +14,10 @@ Supported laser distance scan sensors:
 - LDS02RR from Xiaomi 1st gen vacuum cleaners (~$15 used off AliExpress including shipping)
 - RPLIDAR A1
 
-![Loki cropped](https://github.com/makerspet/makerspet_loki/assets/143911662/9e3857b0-df87-4fda-9d94-bfc53fed399d)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a637f379-5ba2-4407-a00a-5fa81ebb6755" width="48%" alt="Mini robot in glossy red"/>
+  <img src="https://github.com/user-attachments/assets/2b487792-3971-44b3-9905-d726304c440e" width="48%" alt="Mini robot in glossy purple"/> 
+</p>
 
 ## Assembly instructions video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WPB2B1DPf_s" target="_blank">
