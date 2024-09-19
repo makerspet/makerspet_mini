@@ -2,14 +2,14 @@
   <model name='makerspet_mini'>
     <link name='base_footprint'>
       <inertial>
-        <pose>0.003643 0 0.0437 0 -0 0</pose>
+        <pose>-0.003643 0 0.0437 0 -0 0</pose>
         <mass>0.7</mass>
         <inertia>
           <ixx>0.00103676</ixx>
-          <ixy>0</ixy>
-          <ixz>8.976e-05</ixz>
+          <ixy>4.98839e-21</ixy>
+          <ixz>-8.976e-05</ixz>
           <iyy>0.00141717</iyy>
-          <iyz>-6.85645e-20</iyz>
+          <iyz>-4.54868e-20</iyz>
           <izz>0.000586816</izz>
         </inertia>
       </inertial>
@@ -31,7 +31,7 @@
         </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__caster_link_collision_1'>
-        <pose>0.051 0 0.0085 0 -0 0</pose>
+        <pose>-0.051 0 0.0085 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.0085</radius>
@@ -67,7 +67,7 @@
         </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__base_scan_collision_3'>
-        <pose>0 0 0.0853 -3.14159 0 0</pose>
+        <pose>0 0 0.0853 3.14159 -0 3.14159</pose>
         <geometry>
           <cylinder>
             <length>0.016</length>
@@ -99,7 +99,7 @@
         </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__caster_link_visual_1'>
-        <pose>0.051 0 0.0085 0 -0 0</pose>
+        <pose>-0.051 0 0.0085 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.0085</radius>
@@ -128,7 +128,7 @@
         </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__base_scan_visual_3'>
-        <pose>0 0 0.0853 -3.14159 0 0</pose>
+        <pose>0 0 0.0853 3.14159 -0 3.14159</pose>
         <geometry>
           <cylinder>
             <length>0.016</length>
@@ -173,7 +173,7 @@
           <output_type>sensor_msgs/LaserScan</output_type>
           <frame_name>base_scan</frame_name>
         </plugin>
-        <pose>0 0 0.0853 -3.14159 0 0</pose>
+        <pose>0 0 0.0853 3.14159 -0 3.14159</pose>
       </sensor>
     </link>
     <joint name='wheel_left_joint' type='revolute'>
