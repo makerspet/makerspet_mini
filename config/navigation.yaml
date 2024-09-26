@@ -1,6 +1,6 @@
-# https://github.com/ROBOTIS-GIT/turtlebot3/blob/humble-devel/turtlebot3_navigation2/param/burger.yaml
+# https://docs.nav2.org/configuration/index.html
 # https://github.com/ros-navigation/navigation2/blob/humble/nav2_bringup/params/nav2_params.yaml
-# https://docs.nav2.org/configuration/packages/configuring-costmaps.html
+# https://github.com/ROBOTIS-GIT/turtlebot3/blob/humble-devel/turtlebot3_navigation2/param/burger.yaml
 amcl:
   ros__parameters:
     use_sim_time: False
@@ -18,8 +18,7 @@ amcl:
     lambda_short: 0.1
     laser_likelihood_max_dist: 2.0
     laser_max_range: 100.0
-#    laser_min_range: -1.0
-    laser_min_range: 0.15
+    laser_min_range: -1.0
     laser_model_type: "likelihood_field"
     max_beams: 60
     max_particles: 2000
