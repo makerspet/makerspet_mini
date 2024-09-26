@@ -19,6 +19,10 @@
   <xacro:property name="laser_puck_height" value="0.016"/>
   <xacro:property name="laser_puck_diameter" value="0.06"/>
   <xacro:property name="laser_puck_offset" value="0.0384"/>
+  <xacro:property name="laser_motor_diameter" value="0.02"/>
+  <xacro:property name="lidar_motor_x_offset" value="0.04"/>
+  <xacro:property name="lidar_motor_z_offset" value="0.012"/>
+  <xacro:property name="laser_motor_height" value="0.01"/>
   <xacro:property name="head_height" value="0.0388"/>
   <xacro:property name="lidar_center_offset" value="0.000"/>
 
@@ -29,7 +33,8 @@
   <!-- caster and battery weight -->
   <xacro:property name="caster_mass" value="0.050"/>
   <xacro:property name="wheel_mass" value="0.050"/>
-  <xacro:property name="laser_puck_mass" value="0.200"/>
+  <xacro:property name="laser_puck_mass" value="0.150"/>
+  <xacro:property name="laser_motor_mass" value="0.050"/>
   <xacro:property name="head_mass" value="0.200"/>
   <!-- ****************** **************** ****************** -->
 
@@ -280,6 +285,30 @@
     <xacro:solid_cylinder_inertia m="${laser_puck_mass}" r="${laser_puck_diameter/2}" h="${laser_puck_height}"/>
   </link>
 
+  <joint name="scan_motor_joint" type="fixed">
+    <parent link="base_scan"/>
+    <child link="scan_motor"/>
+    <origin xyz="${lidar_motor_x_offset} 0 ${lidar_motor_z_offset}" rpy="0 -${pi} 0"/>
+  </joint>
+
+  <link name="scan_motor">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="${laser_motor_height}" radius="${laser_motor_diameter/2}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="${laser_motor_height}" radius="${laser_motor_diameter/2}"/>
+      </geometry>
+    </collision>
+
+    <xacro:solid_cylinder_inertia m="${laser_motor_mass}" r="${laser_motor_diameter/2}" h="${laser_motor_height}"/>
+  </link>
 
   <joint name="head_joint" type="fixed">
     <parent link="base_link"/>
