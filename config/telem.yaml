@@ -2,7 +2,7 @@ kaiaai_telemetry_node:
   ros__parameters:
 
     laser_scan:
-      mask_radius_meters: 0.12
+      mask_radius_meters: 0.0625
       lidar_model: "LDROBOT-LD14P"
 
     battery:
