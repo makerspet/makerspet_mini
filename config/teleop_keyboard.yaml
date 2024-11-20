@@ -4,7 +4,7 @@
 # ang_vel_step = min_ang_vel, obtained from test
 # max_lin_accel = WheelDia * RatedTorqueKgCm * 100 / WeightKg
 # max_ang_accel = max_lin_accel / (wheel_track / 2)
-# 100RPM motor, derated 90%
+# 200RPM motor, derated 90%
 teleop_keyboard_node:
   ros__parameters:
     max_lin_vel: 0.4
