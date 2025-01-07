@@ -14,7 +14,7 @@ amcl:
     global_frame_id: "map"
     lambda_short: 0.1
     laser_likelihood_max_dist: 2.0
-    laser_max_range: 100.0
+    laser_max_range: 10.0
     laser_min_range: -1.0
     laser_model_type: "likelihood_field"
     max_beams: 60
@@ -114,7 +114,9 @@ bt_navigator:
 
 controller_server:
   ros__parameters:
-    controller_frequency: 20.0
+    use_sim_time: True
+#   controller_frequency: 20.0
+    controller_frequency: 9.0
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.5
     min_theta_velocity_threshold: 0.001
@@ -142,7 +144,19 @@ controller_server:
       yaw_goal_tolerance: 0.25
     # DWB parameters
     FollowPath:
-      plugin: "dwb_core::DWBLocalPlanner"
+#     plugin: "dwb_core::DWBLocalPlanner"
+      plugin: "nav2_rotation_shim_controller::RotationShimController"
+      primary_controller: "dwb_core::DWBLocalPlanner"
+#     angular_dist_threshold: 0.7
+      angular_dist_threshold: 0.2
+#     forward_sampling_distance: 0.5
+      forward_sampling_distance: 0.125
+      rotate_to_heading_angular_vel: 1.0
+      max_angular_accel: 3.2
+      simulate_ahead_time: 1.0
+#     rotate_to_goal_heading: true
+
+      # DWB params
       debug_trajectory_details: True
       min_vel_x: 0.0
       min_vel_y: 0.0
@@ -199,7 +213,8 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.0625
+#       inflation_radius: 0.0625 + footprint_padding
+        inflation_radius: 0.0725
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
@@ -256,7 +271,8 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.0625
+#       inflation_radius: 0.0625 + footprint_padding
+        inflation_radius: 0.0725
       always_send_full_costmap: True
 
 # The yaml_filename does not need to be specified since it going to be set by defaults in launch.
@@ -344,3 +360,7 @@ velocity_smoother:
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
     velocity_timeout: 1.0
+
+slam_toolbox:
+  ros__parameters:
+    scan_buffer_maximum_scan_distance: 10.0
