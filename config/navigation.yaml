@@ -116,7 +116,7 @@ bt_navigator:
 
 controller_server:
   ros__parameters:
-    use_sim_time: True
+#   use_sim_time: True
 #   controller_frequency: 20.0
     controller_frequency: 5.0
     min_x_velocity_threshold: 0.01
@@ -209,13 +209,13 @@ local_costmap:
       rolling_window: true
       width: 3
       height: 3
-      resolution: 0.05
+      resolution: 0.02
       robot_radius: 0.0625
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-#       inflation_radius: 0.0625 + footprint_padding
+#       cost_scaling_factor: 3.0
+        cost_scaling_factor: 2.58
         inflation_radius: 0.0725
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
@@ -245,8 +245,8 @@ local_costmap:
 global_costmap:
   global_costmap:
     ros__parameters:
-      update_frequency: 1.0
-      publish_frequency: 1.0
+      update_frequency: 2.0
+      publish_frequency: 2.0
       global_frame: map
       robot_base_frame: base_link
       robot_radius: 0.0625
@@ -272,8 +272,8 @@ global_costmap:
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-#       inflation_radius: 0.0625 + footprint_padding
+#       cost_scaling_factor: 3.0
+        cost_scaling_factor: 2.58
         inflation_radius: 0.0725
       always_send_full_costmap: True
 
@@ -286,7 +286,7 @@ global_costmap:
 
 map_saver:
   ros__parameters:
-    save_map_timeout: 5.0
+    save_map_timeout: 60.0
     free_thresh_default: 0.25
     occupied_thresh_default: 0.65
     map_subscribe_transient_local: True
@@ -297,8 +297,8 @@ planner_server:
     planner_plugins: ["GridBased"]
     GridBased:
       plugin: "nav2_navfn_planner/NavfnPlanner"
-      tolerance: 0.5
-#     tolerance: 0.0625
+#     tolerance: 0.5
+      tolerance: 0.0625
       use_astar: false
       allow_unknown: true
 
@@ -340,14 +340,14 @@ behavior_server:
 
 waypoint_follower:
   ros__parameters:
-    loop_rate: 20
+    loop_rate: 2
     stop_on_failure: false
     action_server_result_timeout: 900.0
     waypoint_task_executor_plugin: "wait_at_waypoint"
     wait_at_waypoint:
       plugin: "nav2_waypoint_follower::WaitAtWaypoint"
       enabled: True
-      waypoint_pause_duration: 200
+      waypoint_pause_duration: 2
 
 velocity_smoother:
   ros__parameters:
