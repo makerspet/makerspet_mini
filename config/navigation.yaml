@@ -369,6 +369,11 @@ velocity_smoother:
     deadband_velocity: [0.0, 0.0, 0.0]
     velocity_timeout: 1.0
 
+# https://github.com/SteveMacenski/slam_toolbox
+# https://github.com/SteveMacenski/slam_toolbox/blob/ros2/src/slam_toolbox_common.cpp
+# https://github.com/kaiaai/auto_mapper/blob/master/config/mapper_params_online_async.yaml
 slam_toolbox:
   ros__parameters:
     scan_buffer_maximum_scan_distance: 10.0
+#   transform_publish_period: 0.05
+#   map_update_interval: 10.0
