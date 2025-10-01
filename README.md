@@ -1,6 +1,6 @@
 # Maker's Pet Mini ROS2 educational robot
 
-A 124mm DIY 3D-printable pet robot compatible with [Kaia.ai](https://kaia.ai) software [platform](https://github.com/kaiaai/). 3D print, build, run and mod your own home pet robot! Please learn more at [Maker's Pet](https://makerspet.com), [REMAKE.AI](https://remake.ai) and join our [FB group](https://www.facebook.com/groups/243730868651472/).
+A 120mm DIY 3D-printable pet robot compatible with [Kaia.ai](https://kaia.ai) software [platform](https://github.com/kaiaai/). 3D print, build, run and mod your own home pet robot! Please learn more at [Maker's Pet](https://makerspet.com), [REMAKE.AI](https://remake.ai) and join our [FB group](https://www.facebook.com/groups/243730868651472/).
 
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
@@ -21,29 +21,9 @@ Supported laser distance scan sensors:
   <img src="https://github.com/user-attachments/assets/2b487792-3971-44b3-9905-d726304c440e" width="48%" alt="Mini robot in glossy purple"/> 
 </p>
 
-## Assembly instructions video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=WPB2B1DPf_s" target="_blank">
- <img src="http://img.youtube.com/vi/WPB2B1DPf_s/maxresdefault.jpg" alt="Watch the assembly instructions video" width="720" height="405" border="10" />
-</a>
-
-## PC, firmware setup instructions video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=XOc5kCE3MC0" target="_blank">
- <img src="http://img.youtube.com/vi/XOc5kCE3MC0/maxresdefault.jpg" alt="Watch the one-time PC setup, firmware upload instructions video" width="720" height="405" border="10" />
-</a>
-
-## Bring-up instructions video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=L_XbkA4pwRc" target="_blank">
- <img src="http://img.youtube.com/vi/L_XbkA4pwRc/maxresdefault.jpg" alt="Watch the bring-up instructions video" width="720" height="405" border="10" />
-</a>
-
-## 3D printing instructions
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=4k6W1QyJMMw" target="_blank">
- <img src="http://img.youtube.com/vi/L_XbkA4pwRc/maxresdefault.jpg" alt="Watch the bring-up instructions video" width="720" height="405" border="10" />
-</a>
-
-## Arduino ESP32 breakout board setup instructions
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=zizGI8MjANU" target="_blank">
- <img src="http://img.youtube.com/vi/zizGI8MjANU/maxresdefault.jpg" alt="Watch the Arduino ESP32 breakout board setup instructions video" width="720" height="405" border="10" />
+## Instructions videos - COMPLETE PLAYLIST
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=6GtjAB19GP8&list=PLOSXKDW70aR8uA1IFahSKVuk5ODDfjTZV" target="_blank">
+ <img src="http://img.youtube.com/vi/6GtjAB19GP8/maxresdefault.jpg" alt="Watch the assembly instructions video" width="720" height="405" border="10" />
 </a>
 
 ## Features
