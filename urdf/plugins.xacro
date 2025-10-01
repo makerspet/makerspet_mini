@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
   <gazebo>
     <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
 
@@ -48,6 +48,7 @@
   <!-- gazebo reference="laser_frame" -->
   <gazebo reference="base_scan">
     <!-- sensor name="laser" type="gpu_lidar" -->
+    <sensor type="ray" name="laser_scan_sensor">
     <!-- pose> 0 0 0 0 0 0 </pose -->
     <visualize>false</visualize>
     <!-- visualize>true</visualize -->

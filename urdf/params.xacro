@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- ****************** ROBOT DIMENSIONS ****************** -->
   <!-- Units: meters, degrees, kg, N*m, m/s2 -->
   <xacro:property name="wheel_diameter" value="0.043"/>
