@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot>
+
+  <material name="black">
+      <color rgba="0 0 0 1.0"/>
+  </material>
+
+  <material name="dark">
+    <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+
+  <material name="light_black">
+    <color rgba="0.4 0.4 0.4 1.0"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1.0"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0 0.8 0 1.0"/>
+  </material>
+
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+
+  <material name="orange">
+    <color rgba="1.0 0.4235 0.0392 1.0"/>
+  </material>
+
+  <material name="brown">
+    <color rgba="0.8706 0.8118 0.7647 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8 0 0 1.0"/>
+  </material>
+
+  <material name="yellow">
+    <color rgba="0.8 0.8 0 1.0"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+  <gazebo reference="wheel_left_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <!-- mu>100000.0</mu -->
+    <!-- mu2>100000.0</mu2 -->
+    <material>Gazebo/Red</material>
+    <!-- fdir1>0 0 0</fdir1 -->
+    <!-- kp>1e+5</kp -->
+    <!-- kd>1</kd -->
+    <!-- min_depth>0.001</min_depth -->
+    <!-- max_vel>0.01</max_vel -->
+
+    <!-- Turtlebot3 SDF -->
+    <!-- slip1>0.0</slip1 -->
+    <!-- slip2>0.0</slip2 -->
+    <!-- soft_cfm>0</soft_cfm -->
+    <!-- soft_erp>0.2</soft_erp -->
+  </gazebo>
+
+  <gazebo reference="wheel_right_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="caster_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="head_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="base_scan">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<robot>
+  <!-- ****************** ROBOT DIMENSIONS ****************** -->
+  <!-- Units: meters, degrees, kg, N*m, m/s2 -->
+  <xacro:property name="wheel_diameter" value="0.043"/>
+  <xacro:property name="wheel_width" value="0.0055"/>
+  <xacro:property name="caster_diameter" value="0.017"/>
+  <!-- Caster center to base edge -->
+  <xacro:property name="caster_inset" value="0.011"/>
+  <xacro:property name="floor_clearance" value="0.0149"/>
+  <xacro:property name="base_diameter" value="0.124"/>
+  <xacro:property name="wheel_base" value="0.105043"/>
+  <xacro:property name="lower_cylinder_height" value="0.032"/>
+  <xacro:property name="laser_puck_height" value="0.016"/>
+  <xacro:property name="laser_puck_diameter" value="0.06"/>
+  <xacro:property name="laser_puck_offset" value="0.0384"/>
+  <xacro:property name="laser_motor_diameter" value="0.02"/>
+  <xacro:property name="lidar_motor_x_offset" value="0.04"/>
+  <xacro:property name="lidar_motor_z_offset" value="0.012"/>
+  <xacro:property name="laser_motor_height" value="0.01"/>
+  <xacro:property name="head_height" value="0.0388"/>
+  <xacro:property name="lidar_center_offset" value="0.000"/>
+
+  <!-- N*m -->
+  <xacro:property name="motor_stall_torque" value="0.171616375"/>
+  <xacro:property name="max_wheel_acceleration" value="1"/>
+  <xacro:property name="lower_cylinder_mass" value="0.250"/>
+  <!-- caster and battery weight -->
+  <xacro:property name="caster_mass" value="0.050"/>
+  <xacro:property name="wheel_mass" value="0.050"/>
+  <xacro:property name="laser_puck_mass" value="0.150"/>
+  <xacro:property name="laser_motor_mass" value="0.050"/>
+  <xacro:property name="head_mass" value="0.200"/>
+  <!-- ****************** **************** ****************** -->
+
+  <xacro:property name="DEG2RAD" value="0.0174533"/>
+</robot>
