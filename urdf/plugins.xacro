@@ -7,7 +7,7 @@
       <right_joint>wheel_right_joint</right_joint>
 
       <wheel_separation>${wheel_base}</wheel_separation>
-      <wheel_diameter>${wheel_diameter}</wheel_diameter>
+      <wheel_radius>${wheel_diameter/2}</wheel_radius>
 
       <max_wheel_torque>${motor_stall_torque}</max_wheel_torque>
       <max_wheel_acceleration>${max_wheel_acceleration}</max_wheel_acceleration>
