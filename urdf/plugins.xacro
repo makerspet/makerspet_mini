@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+<!-- https://gazebosim.org/docs/latest/migrating_gazebo_classic_ros2_packages/ -->
+<!-- Turtlebot3 Jazzy https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/ -->
+<!-- Build URDF xacro robot.urdf.xacro -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <gazebo>
     <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
@@ -9,8 +12,7 @@
       <wheel_separation>${wheel_base}</wheel_separation>
       <wheel_radius>${wheel_diameter/2}</wheel_radius>
 
-      <max_wheel_torque>${motor_stall_torque}</max_wheel_torque>
-      <max_wheel_acceleration>${max_wheel_acceleration}</max_wheel_acceleration>
+      <max_linear_acceleration>${max_linear_acceleration}</max_linear_acceleration>
 
       <!-- update_rate>30</update_rate -->
       <!-- command_topic>cmd_vel</command_topic -->
@@ -20,10 +22,6 @@
       <!-- odometry_topic>odom</odometry_topic -->
       <!-- odometry_frame>odom</odometry_frame -->
       <!-- robot_base_frame>base_footprint</robot_base_frame -->
-
-      <!-- wheel_separation>0.35</wheel_separation -->
-      <!-- wheel_radius>0.05</wheel_radius -->
-      <!-- max_linear_acceleration>10</max_linear_acceleration -->
       <topic>cmd_vel</topic>
     </plugin>
 
@@ -35,6 +33,9 @@
       <odom_topic>/odom</odom_topic>
       <tf_topic>/tf</tf_topic>
       <dimensions>2</dimensions>
+      <!-- topic>joint_states</topic --> <!--from <ros><remapping> -->
+      <!-- joint_name>wheel_left_joint</joint_name -->
+      <!-- joint_name>wheel_right_joint</joint_name -->
     </plugin>
 
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">

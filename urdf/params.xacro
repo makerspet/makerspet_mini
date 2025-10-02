@@ -23,7 +23,7 @@
 
   <!-- N*m -->
   <xacro:property name="motor_stall_torque" value="0.171616375"/>
-  <xacro:property name="max_wheel_acceleration" value="1"/>
+  <xacro:property name="max_linear_acceleration" value="1"/>
   <xacro:property name="lower_cylinder_mass" value="0.250"/>
   <!-- caster and battery weight -->
   <xacro:property name="caster_mass" value="0.050"/>
