@@ -21,6 +21,7 @@
       <geometry>
         <cylinder length="${lower_cylinder_height}" radius="${base_diameter/2}"/>
       </geometry>
+      <material name="white"/>
     </visual>
 
     <collision>
@@ -46,6 +47,7 @@
       <geometry>
         <sphere radius="${caster_diameter/2}"/>
       </geometry>
+      <material name="white"/>
     </visual>
 
    <collision>
@@ -76,6 +78,7 @@
       <geometry>
         <cylinder length="${wheel_width}" radius="${wheel_diameter/2}"/>
       </geometry>
+      <material name="red"/>
     </visual>
 
     <collision>
@@ -105,6 +108,7 @@
       <geometry>
         <cylinder length="${wheel_width}" radius="${wheel_diameter/2}"/>
       </geometry>
+      <material name="red"/>
     </visual>
 
     <collision>
@@ -130,6 +134,7 @@
       <geometry>
         <cylinder length="${laser_puck_height}" radius="${laser_puck_diameter/2}"/>
       </geometry>
+      <material name="black"/>
     </visual>
 
     <collision>
@@ -154,6 +159,7 @@
       <geometry>
         <cylinder length="${laser_motor_height}" radius="${laser_motor_diameter/2}"/>
       </geometry>
+      <material name="black"/>
     </visual>
 
     <collision>
@@ -178,6 +184,7 @@
       <geometry>
         <mesh filename="package://makerspet_mini/mesh/hemisphere.stl" scale="${0.001*base_diameter} ${0.001*base_diameter} ${0.001*head_height*2}"/>
       </geometry>
+      <material name="red"/>
     </visual>
 
     <collision>
