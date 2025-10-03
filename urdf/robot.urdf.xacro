@@ -34,7 +34,6 @@
     <xacro:solid_cylinder_inertia m="${lower_cylinder_mass}" r="${base_diameter/2}" h="${lower_cylinder_height}"/>
   </link>
 
-
   <joint name="caster_joint" type="fixed">
     <parent link="base_link"/>
     <child link="caster_link"/>
