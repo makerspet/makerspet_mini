@@ -44,67 +44,16 @@
   <gazebo reference="wheel_left_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <visual>
-      <material>
-        <ambient>0.8 0 0 1</ambient>
-        <diffuse>0.8 0 0 1</diffuse>
-        <specular>0.8 0 0 1</specular>
-      </material>
-    </visual>
   </gazebo>
 
   <gazebo reference="wheel_right_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <visual>
-      <material>
-        <ambient>0.8 0 0 1</ambient>
-        <diffuse>0.8 0 0 1</diffuse>
-        <specular>0.8 0 0 1</specular>
-      </material>
-    </visual>
   </gazebo>
 
   <gazebo reference="caster_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <visual>
-      <material>
-        <ambient>1 1 1 1</ambient>
-        <diffuse>1 1 1 1</diffuse>
-        <specular>1 1 1 1</specular>
-      </material>
-    </visual>
-  </gazebo>
-
-  <gazebo reference="head_link">
-    <visual>
-      <material>
-        <ambient>0.8 0 0 1</ambient>
-        <diffuse>0.8 0 0 1</diffuse>
-        <specular>0.8 0 0 1</specular>
-      </material>
-    </visual>
-  </gazebo>
-
-  <gazebo reference="base_link">
-    <visual>
-      <material>
-        <ambient>1 1 1 1</ambient>
-        <diffuse>1 1 1 1</diffuse>
-        <specular>1 1 1 1</specular>
-      </material>
-    </visual>
-  </gazebo>
-
-  <gazebo reference="base_scan">
-    <visual>
-      <material>
-        <ambient>0 0 0 1</ambient>
-        <diffuse>0 0 0 1</diffuse>
-        <specular>0 0 0 1</specular>
-      </material>
-    </visual>
   </gazebo>
 
 </robot>
