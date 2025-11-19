@@ -37,12 +37,21 @@ amcl:
     z_max: 0.05
     z_rand: 0.5
     z_short: 0.05
-    scan_topic: "scan"
+    scan_topic: scan
+    map_topic: map
+    # set_initial_pose: false
+    # always_reset_initial_pose: false
+    # first_map_only: false
+    # initial_pose:
+    #   x: 0.0
+    #   y: 0.0
+    #   z: 0.0
+    #   yaw: 0.0
 
 bt_navigator:
   ros__parameters:
-    global_frame: "map"
-    robot_base_frame: "base_link"
+    global_frame: map
+    robot_base_frame: base_link
     odom_topic: /odom
     bt_loop_duration: 10
     wait_for_service_timeout: 5000
