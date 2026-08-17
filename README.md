@@ -54,13 +54,12 @@ Supported laser distance scan sensors:
 - Arduino ESP32 micro-controller
 
 ## Instructions
-- 3D printing [STL](https://github.com/makerspet/3d_models/tree/main/loki_200mm/stl), [3MF](https://github.com/makerspet/3d_models/tree/main/loki_200mm/3mf)
+- 3D printing [3MF here](https://github.com/makerspet/store/tree/main/MINI-BDC30P-BODY/), [3MF base](https://github.com/makerspet/store/tree/main/MINI-BDC30P-BODY/v1.0.0) and [3MF motor clamps](https://github.com/makerspet/store/tree/main/N20-CLAMPS/v1.0.0)
 - Arduino ESP32 [firmware](https://github.com/kaiaai/firmware)
-- PC end user and developer [setup](https://github.com/kaiaai/docker)
-- KiCad [schematic, PCB](https://github.com/makerspet/pcb)
+- PC end user and developer [setup](https://github.com/kaiaai/install)
+- PCB [schematic](https://github.com/makerspet/store/blob/main/BDC-30P/v1.1.1/BDC_30P_v111_schematic.pdf)
 - Software setup, configuration [instructions](https://www.youtube.com/playlist?list=PLOSXKDW70aR8SA16wTB0ou9ClKhv7micy)
-- Fusion 360 3D CAD [design files](https://github.com/makerspet/3d_models/tree/main/loki_200mm/fusion360)
-- ROS2 software mod [instructions](https://github.com/makerspet/makerspet_loki/tree/main/urdf)
+- Fusion 360 3D CAD [design files](https://github.com/makerspet/store/tree/main/MINI-BDC30P-BODY/v1.0.1)
 
 ## Open-source design
 Authored in Fusion 360. Printed using a Prusa MK3S+.
